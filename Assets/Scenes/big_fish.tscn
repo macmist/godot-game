@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iyk58"]
 height = 24.0
 
-[node name="BigFish" type="CharacterBody2D" groups=["Enemy"]]
+[node name="BigFish" type="CharacterBody2D" groups=["Enemy", "destroy_on_game_over"]]
 collision_mask = 2
 script = ExtResource("1_0hcdu")
 speed = -50.0

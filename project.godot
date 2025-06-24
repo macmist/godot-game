@@ -19,3 +19,4 @@ config/icon="res://icon.svg"
 
 Enemy=""
 Friend=""
+destroy_on_game_over=""

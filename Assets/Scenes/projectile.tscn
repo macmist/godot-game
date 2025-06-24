@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nes5s"]
 radius = 12.0416
 
-[node name="Projectile" type="Sprite2D"]
+[node name="Projectile" type="Sprite2D" groups=["destroy_on_game_over"]]
 texture = ExtResource("1_p7xhx")
 script = ExtResource("2_bno0r")
 

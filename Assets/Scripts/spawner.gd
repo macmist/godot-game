@@ -22,3 +22,7 @@ func spawn_something():
 
 func on_fish_died():
 	fish_died.emit()
+
+
+func on_game_over():
+	queue_free()

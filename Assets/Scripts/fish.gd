@@ -32,3 +32,6 @@ func take_damage(damage: float):
 	if health <= 0:
 		died.emit()
 		queue_free()
+		
+func on_game_over():
+	queue_free()

@@ -16,9 +16,10 @@ script = ExtResource("1_36kkw")
 
 [node name="Tower" parent="." instance=ExtResource("2_efg45")]
 position = Vector2(61, 191)
+parent_for_projectiles = NodePath("..")
 
-[node name="Spawner" type="Marker2D" parent="."]
-position = Vector2(1201, 189)
+[node name="Spawner" type="Marker2D" parent="." groups=["destroy_on_game_over"]]
+position = Vector2(172, 86)
 script = ExtResource("3_d1gso")
 items = Array[PackedScene]([ExtResource("4_motp3"), ExtResource("1_msv38")])
 
@@ -48,6 +49,18 @@ offset_right = 1133.0
 offset_bottom = 77.0
 theme_override_font_sizes/font_size = 50
 text = "0"
+
+[node name="GameOver" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+offset_left = 381.0
+offset_top = 251.0
+offset_right = 809.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 75
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="fish_died" from="Spawner" to="." method="_on_spawner_fish_died"]
 [connection signal="body_entered" from="FishGrinder" to="." method="_on_fish_detector_body_entered"]

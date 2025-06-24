@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_u1oly"]
 radius = 30.0167
 
-[node name="Tower" type="StaticBody2D" groups=["Friend"]]
+[node name="Tower" type="StaticBody2D" groups=["Friend", "destroy_on_game_over"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_0me8o")
