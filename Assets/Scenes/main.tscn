@@ -62,6 +62,15 @@ text = "Game Over!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Power" type="Button" parent="CanvasLayer"]
+offset_left = 138.0
+offset_top = 584.0
+offset_right = 253.0
+offset_bottom = 615.0
+text = "More damage"
+
 [connection signal="fish_died" from="Spawner" to="." method="_on_spawner_fish_died"]
 [connection signal="body_entered" from="FishGrinder" to="." method="_on_fish_detector_body_entered"]
 [connection signal="body_entered" from="FishGrinder" to="FishGrinder" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Power" to="." method="_on_power_pressed"]
+[connection signal="pressed" from="CanvasLayer/Power" to="Tower" method="_on_power_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdlvin2gfwcko"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wx08k"]
+particle_flag_disable_z = true
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+process_material = SubResource("ParticleProcessMaterial_wx08k")

@@ -1,3 +1,5 @@
+class_name Projectile
+
 extends Sprite2D
 
 @export var speed: float = 400;

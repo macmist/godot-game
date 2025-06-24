@@ -7,6 +7,8 @@ extends Node2D
 
 @export var maximum_units_through = 5
 
+signal power_up()
+
 var points: int = 0
 
 func _ready() -> void:
@@ -28,3 +30,7 @@ func on_point_scored():
 
 func _on_spawner_fish_died() -> void:
 	on_point_scored()
+
+
+func _on_power_pressed() -> void:
+	power_up.emit()

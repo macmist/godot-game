@@ -6,11 +6,14 @@ extends StaticBody2D
 @onready var health_bar: ProgressBar = %HealthBar
 @export var parent_for_projectiles: NodePath
 
+var projectile_upgrades: Array[BaseProjectileStrategy] = []
+
 func _ready() -> void:
 	health_bar.max_value = health
 	health_bar.value = health
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
+	projectile_upgrades.append(FancyProjectileStrategy.new())
 	
 	
 func _on_timer_timeout() -> void:
@@ -18,6 +21,10 @@ func _on_timer_timeout() -> void:
 	var new_projectile = PROJECTILE.instantiate()
 	
 	new_projectile.global_position = global_position
+	
+	for upgrade in projectile_upgrades:
+		upgrade.apply_upgrade(new_projectile)
+	
 	var parent = get_node(parent_for_projectiles)
 	parent.add_child(new_projectile)
 	pass # Replace with function body.
@@ -32,3 +39,8 @@ func take_damage(damage: float):
 
 func on_game_over():
 	queue_free()
+
+
+func _on_power_pressed() -> void:
+	print("HIIII")
+	projectile_upgrades.append(DamageProjectileStrategy.new())
