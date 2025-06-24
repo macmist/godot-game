@@ -11,7 +11,7 @@ collision_mask = 2
 script = ExtResource("1_0hcdu")
 speed = -50.0
 health = 200.0
-damage = 30.0
+damage = 75.0
 
 [node name="Fish" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

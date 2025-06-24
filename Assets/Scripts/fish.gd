@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = -100;
 @export var health: float = 100;
-@export var damage: float = 10;
+@export var damage: float = 50;
 
 @onready var health_bar: ProgressBar = %HealthBar
 
@@ -28,4 +28,5 @@ func take_damage(damage: float):
 	health -= damage;
 	health_bar.value = health
 	if health <= 0:
+		PointCounter.count_point()
 		queue_free()
