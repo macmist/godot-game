@@ -6,7 +6,8 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iyk58"]
 height = 24.0
 
-[node name="Fish" type="CharacterBody2D"]
+[node name="Fish" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 2
 script = ExtResource("1_5w6hj")
 
 [node name="Fish" type="Sprite2D" parent="."]
