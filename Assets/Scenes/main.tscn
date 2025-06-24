@@ -19,7 +19,7 @@ position = Vector2(61, 191)
 parent_for_projectiles = NodePath("..")
 
 [node name="Spawner" type="Marker2D" parent="." groups=["destroy_on_game_over"]]
-position = Vector2(172, 86)
+position = Vector2(1169, 195)
 script = ExtResource("3_d1gso")
 items = Array[PackedScene]([ExtResource("4_motp3"), ExtResource("1_msv38")])
 
