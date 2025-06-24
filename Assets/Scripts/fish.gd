@@ -6,6 +6,8 @@ extends CharacterBody2D
 
 @onready var health_bar: ProgressBar = %HealthBar
 
+signal died()
+
 func _ready() -> void:
 	health_bar.max_value = health
 	health_bar.value = health
@@ -28,5 +30,5 @@ func take_damage(damage: float):
 	health -= damage;
 	health_bar.value = health
 	if health <= 0:
-		PointCounter.count_point()
+		died.emit()
 		queue_free()

@@ -49,5 +49,6 @@ offset_bottom = 77.0
 theme_override_font_sizes/font_size = 50
 text = "0"
 
+[connection signal="fish_died" from="Spawner" to="." method="_on_spawner_fish_died"]
 [connection signal="body_entered" from="FishGrinder" to="." method="_on_fish_detector_body_entered"]
 [connection signal="body_entered" from="FishGrinder" to="FishGrinder" method="_on_body_entered"]
