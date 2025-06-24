@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdqdcpatfh2df"]
+
+[ext_resource type="Texture2D" uid="uid://b3eet6wc0qpwr" path="res://Assets/Images/Mine.png" id="1_p7xhx"]
+[ext_resource type="Script" path="res://Assets/Scripts/projectile.gd" id="2_bno0r"]
+
+[node name="Projectile" type="Sprite2D"]
+texture = ExtResource("1_p7xhx")
+script = ExtResource("2_bno0r")

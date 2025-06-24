@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://f8fa6b5crkbx"]
+
+[ext_resource type="Texture2D" uid="uid://dhcef2mvclnls" path="res://Assets/Images/Tower.png" id="1_ju1hx"]
+[ext_resource type="Script" path="res://Assets/Scripts/tower.gd" id="2_0me8o"]
+
+[node name="Tower" type="Sprite2D"]
+texture = ExtResource("1_ju1hx")
+script = ExtResource("2_0me8o")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true

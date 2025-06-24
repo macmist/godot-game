@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcrumdffnv42y"]
+
+[ext_resource type="PackedScene" uid="uid://co3ynvlxmm6tb" path="res://Assets/Scenes/fish.tscn" id="1_msv38"]
+[ext_resource type="PackedScene" uid="uid://f8fa6b5crkbx" path="res://Assets/Scenes/Tower.tscn" id="2_efg45"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 1)
+
+[node name="Fish" parent="." instance=ExtResource("1_msv38")]
+position = Vector2(728, 190)
+
+[node name="Tower" parent="." instance=ExtResource("2_efg45")]
+position = Vector2(61, 191)
