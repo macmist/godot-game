@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcrumdffnv42y"]
+[gd_scene load_steps=5 format=3 uid="uid://bcrumdffnv42y"]
 
 [ext_resource type="PackedScene" uid="uid://co3ynvlxmm6tb" path="res://Assets/Scenes/fish.tscn" id="1_msv38"]
 [ext_resource type="PackedScene" uid="uid://f8fa6b5crkbx" path="res://Assets/Scenes/Tower.tscn" id="2_efg45"]
+[ext_resource type="Script" path="res://Assets/Scripts/spawner.gd" id="3_d1gso"]
+[ext_resource type="PackedScene" uid="uid://dv40brg3w8yhg" path="res://Assets/Scenes/big_fish.tscn" id="4_motp3"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 1)
 
 [node name="Fish" parent="." instance=ExtResource("1_msv38")]
-position = Vector2(728, 190)
+position = Vector2(1130, 192)
 
 [node name="Tower" parent="." instance=ExtResource("2_efg45")]
 position = Vector2(61, 191)
+
+[node name="Spawner" type="Marker2D" parent="."]
+position = Vector2(1201, 189)
+script = ExtResource("3_d1gso")
+items = Array[PackedScene]([ExtResource("4_motp3"), ExtResource("1_msv38")])
