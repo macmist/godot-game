@@ -4,9 +4,13 @@ extends Sprite2D
 
 @export var speed: float = 400;
 @export var damage: float = 25
+@export var target: Fish
 
-func _physics_process(delta: float) -> void:
-	global_position += Vector2(speed * delta, 0);
+func _process(delta: float) -> void:
+	if target and is_instance_valid(target):
+		var direction = (target.global_position - global_position).normalized()
+		look_at(target.position)
+		position += direction * speed * delta
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
