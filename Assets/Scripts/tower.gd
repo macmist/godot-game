@@ -6,6 +6,8 @@ extends StaticBody2D
 @onready var health_bar: ProgressBar = %HealthBar
 @export var parent_for_projectiles: NodePath
 
+var target: Fish
+
 var fishes_in_range: Array[Fish] = []
 
 var projectile_upgrades: Array[BaseProjectileStrategy] = []
@@ -20,16 +22,19 @@ func _ready() -> void:
 	
 func find_closest():
 	var enemy = null
-	var closest_distance: float = 200000
+	if fishes_in_range.is_empty():
+		return
+	var closest_distance: float = INF
 	for fish in fishes_in_range:
-		var distance = position.distance_to(fish.position)
+		var distance = position.distance_to(fish.global_position)
 		if distance < closest_distance:
 			enemy = fish
 			closest_distance = distance
+	draw_line(position,enemy.position, "black")
 	return enemy
 		
 func shoot() -> void:
-	var target = find_closest()
+	target = find_closest()
 	if target == null:
 		return
 	const PROJECTILE = preload("res://Assets/Scenes/projectile.tscn")
@@ -65,14 +70,11 @@ func on_game_over():
 
 
 func _on_power_pressed() -> void:
-	print("HIIII")
 	projectile_upgrades.append(DamageProjectileStrategy.new())
 	
 
-
-
 func _on_range_body_entered(body: Node2D) -> void:
-	if body is Fish:
+	if body is Fish and !fishes_in_range.has(body):
 		print("Found a fish")
 		fishes_in_range.push_front(body)
 
