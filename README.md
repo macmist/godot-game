@@ -10,7 +10,12 @@ I'm only using assets that I made myself. Not the most beautiful but still works
 
 
 ## Preview (latest version)
-![latest-preview (1)](https://github.com/user-attachments/assets/fd99e658-deea-472b-ac28-37ea9342d5a1)
+
+
+
+
+https://github.com/user-attachments/assets/68f8156c-24fc-4137-8351-e70d78b9c44c
+
 
 
 ## Task list (ideas in any order)
