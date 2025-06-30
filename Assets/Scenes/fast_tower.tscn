@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnnyl16y06hrm"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/tower.gd" id="1_ne7rx"]
+[ext_resource type="Shader" path="res://Assets/Scenes/fast_tower.gdshader" id="2_1boc3"]
+[ext_resource type="Texture2D" uid="uid://dhcef2mvclnls" path="res://Assets/Images/Tower.png" id="2_7iceu"]
+[ext_resource type="Script" path="res://Assets/Scripts/Strategies/Target/fastest_enemy_strategy.gd" id="2_w23sc"]
+
+[sub_resource type="Resource" id="Resource_pp8sn"]
+script = ExtResource("2_w23sc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_geu6l"]
+shader = ExtResource("2_1boc3")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1oly"]
+radius = 30.0167
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vacn"]
+radius = 31.5753
+
+[node name="Fast Tower" type="StaticBody2D" groups=["Friend", "destroy_on_game_over"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ne7rx")
+target_strategy = SubResource("Resource_pp8sn")
+
+[node name="Tower" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 3
+material = SubResource("ShaderMaterial_geu6l")
+texture = ExtResource("2_7iceu")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.76
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -32.0
+offset_top = 39.0
+offset_right = 31.0
+offset_bottom = 66.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u1oly")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_4vacn")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
