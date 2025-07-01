@@ -31,7 +31,7 @@ texture = ExtResource("2_7iceu")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.76
+wait_time = 0.147
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true

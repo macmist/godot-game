@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcrumdffnv42y"]
+[gd_scene load_steps=8 format=3 uid="uid://bcrumdffnv42y"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Game.gd" id="1_36kkw"]
 [ext_resource type="PackedScene" uid="uid://co3ynvlxmm6tb" path="res://Assets/Scenes/fish.tscn" id="1_msv38"]
-[ext_resource type="PackedScene" uid="uid://f8fa6b5crkbx" path="res://Assets/Scenes/Tower.tscn" id="2_efg45"]
 [ext_resource type="Script" path="res://Assets/Scripts/spawner.gd" id="3_d1gso"]
 [ext_resource type="PackedScene" uid="uid://dv40brg3w8yhg" path="res://Assets/Scenes/big_fish.tscn" id="4_motp3"]
 [ext_resource type="Script" path="res://Assets/Scripts/fish_grinder.gd" id="6_auern"]
@@ -15,13 +14,11 @@ size = Vector2(102, 669)
 position = Vector2(0, 1)
 script = ExtResource("1_36kkw")
 
-[node name="Tower" parent="." instance=ExtResource("2_efg45")]
-position = Vector2(734, 345)
-parent_for_projectiles = NodePath("..")
-
 [node name="Spawner" type="Marker2D" parent="." groups=["destroy_on_game_over"]]
 position = Vector2(1169, 195)
 script = ExtResource("3_d1gso")
+spawn_interval_min = 0.4
+spawn_interval_max = 1.0
 items = Array[PackedScene]([ExtResource("4_motp3"), ExtResource("1_msv38")])
 
 [node name="FishGrinder" type="Area2D" parent="."]
@@ -73,6 +70,8 @@ text = "More damage"
 [node name="Spawner2" type="Marker2D" parent="." groups=["destroy_on_game_over"]]
 position = Vector2(1091, 529)
 script = ExtResource("3_d1gso")
+spawn_interval_min = 0.5
+spawn_interval_max = 1.0
 items = Array[PackedScene]([ExtResource("4_motp3"), ExtResource("1_msv38")])
 
 [node name="Tower2" parent="." instance=ExtResource("7_fb4nm")]
@@ -83,5 +82,4 @@ parent_for_projectiles = NodePath("..")
 [connection signal="body_entered" from="FishGrinder" to="." method="_on_fish_detector_body_entered"]
 [connection signal="body_entered" from="FishGrinder" to="FishGrinder" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Power" to="." method="_on_power_pressed"]
-[connection signal="pressed" from="CanvasLayer/Power" to="Tower" method="_on_power_pressed"]
 [connection signal="fish_died" from="Spawner2" to="." method="_on_spawner_fish_died"]
