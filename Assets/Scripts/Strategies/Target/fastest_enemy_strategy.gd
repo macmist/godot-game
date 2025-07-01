@@ -8,7 +8,8 @@ func get_target(_position: Vector2, enemy_array: Array[Fish]):
 	var fastest: float = -INF
 	var enemy = null
 	for fish in enemy_array:
-		if fish.speed > fastest:
-			fastest = fish.speed
+		
+		if abs(fish.speed) > fastest:
+			fastest = abs(fish.speed)
 			enemy = fish
 	return enemy
