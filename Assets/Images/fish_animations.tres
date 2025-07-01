@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://7v3phlhaywe3"]
+
+[ext_resource type="Texture2D" uid="uid://d3etqk22nvxwq" path="res://Assets/Images/Fish-Sheet.png" id="1_m6lqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bax4n"]
+atlas = ExtResource("1_m6lqu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0641i"]
+atlas = ExtResource("1_m6lqu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3mh7"]
+atlas = ExtResource("1_m6lqu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpu0r"]
+atlas = ExtResource("1_m6lqu")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bax4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0641i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3mh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpu0r")
+}],
+"loop": true,
+"name": &"Swim",
+"speed": 5.0
+}]
