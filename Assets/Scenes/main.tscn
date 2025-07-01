@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcrumdffnv42y"]
+[gd_scene load_steps=9 format=3 uid="uid://bcrumdffnv42y"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Game.gd" id="1_36kkw"]
 [ext_resource type="PackedScene" uid="uid://co3ynvlxmm6tb" path="res://Assets/Scenes/fish.tscn" id="1_msv38"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dv40brg3w8yhg" path="res://Assets/Scenes/big_fish.tscn" id="4_motp3"]
 [ext_resource type="Script" path="res://Assets/Scripts/fish_grinder.gd" id="6_auern"]
 [ext_resource type="PackedScene" uid="uid://cnnyl16y06hrm" path="res://Assets/Scenes/fast_tower.tscn" id="7_fb4nm"]
+[ext_resource type="Script" path="res://Assets/Scripts/Strategies/Target/strongest_enemy_srategy.gd" id="7_vuf6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4baw"]
 size = Vector2(102, 669)
@@ -77,6 +78,11 @@ items = Array[PackedScene]([ExtResource("4_motp3"), ExtResource("1_msv38")])
 [node name="Tower2" parent="." instance=ExtResource("7_fb4nm")]
 position = Vector2(979, 258)
 parent_for_projectiles = NodePath("..")
+
+[node name="Tower3" parent="." instance=ExtResource("7_fb4nm")]
+position = Vector2(603, 447)
+parent_for_projectiles = NodePath("..")
+target_strategy = ExtResource("7_vuf6d")
 
 [connection signal="fish_died" from="Spawner" to="." method="_on_spawner_fish_died"]
 [connection signal="body_entered" from="FishGrinder" to="." method="_on_fish_detector_body_entered"]

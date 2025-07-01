@@ -15,8 +15,17 @@ I'm only using assets that I made myself. Not the most beautiful but still works
 
 ## Task list (ideas in any order)
 - [x] Tower shoots on closest enemy
-- [ ] 2nd Tower shoots on strongest enemy  <- working on
+- [x] 2nd Tower shoots on strongest enemy
 - [x] Tower aim strategy to be able to do more
+- [ ] Bullets that shoot straight instead of following
+- [ ] Make bullet disappear after x time without touching rather than killing them if there is no target
+- [ ] Bullets that can bounce
+- [ ] Bullets that create small bullets on explode
+- [ ] Tower animation - follow target
+- [ ] Tower shoot animation
+- [ ] Bullet touch animation
+- [ ] Enemy move animation <- Working on
+- [ ] Enemy destroyed animation
 - [ ] Waves of enemy
 - [ ] Fishes follow path
 - [ ] More strategies for the projectiles

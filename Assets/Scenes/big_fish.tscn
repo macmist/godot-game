@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv40brg3w8yhg"]
+[gd_scene load_steps=5 format=3 uid="uid://dv40brg3w8yhg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/fish.gd" id="1_0hcdu"]
 [ext_resource type="Texture2D" uid="uid://cmj7o563gh32i" path="res://Assets/Images/Fish.png" id="2_lgw1p"]
+[ext_resource type="SpriteFrames" uid="uid://7v3phlhaywe3" path="res://Assets/Images/fish_animations.tres" id="3_t22v6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iyk58"]
 height = 24.0
@@ -14,6 +15,7 @@ health = 200.0
 damage = 75.0
 
 [node name="Fish" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 texture = ExtResource("2_lgw1p")
 
@@ -29,3 +31,9 @@ offset_left = -48.0
 offset_top = 24.0
 offset_right = 48.0
 offset_bottom = 51.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_t22v6")
+animation = &"Swim"
+autoplay = "Swim"
