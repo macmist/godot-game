@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var timer: Timer = %Timer
 @onready var health_bar: ProgressBar = %HealthBar
 @export var parent_for_projectiles: NodePath
+@export var target_strategy: BaseTargetStrategy = ClosestTargetStrategy.new()
 
 var target: Fish
 
@@ -19,22 +20,9 @@ func _ready() -> void:
 	timer.start()
 	projectile_upgrades.append(FancyProjectileStrategy.new())
 	
-	
-func find_closest():
-	var enemy = null
-	if fishes_in_range.is_empty():
-		return
-	var closest_distance: float = INF
-	for fish in fishes_in_range:
-		var distance = position.distance_to(fish.global_position)
-		if distance < closest_distance:
-			enemy = fish
-			closest_distance = distance
-	draw_line(position,enemy.position, "black")
-	return enemy
 		
 func shoot() -> void:
-	target = find_closest()
+	target = target_strategy.get_target(position, fishes_in_range)
 	if target == null:
 		return
 	const PROJECTILE = preload("res://Assets/Scenes/projectile.tscn")

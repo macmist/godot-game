@@ -17,7 +17,7 @@ I'm only using assets that I made myself. Not the most beautiful but still works
 ## Task list (ideas in any order)
 - [x] Tower shoots on closest enemy
 - [ ] 2nd Tower shoots on strongest enemy  <- working on
-- [ ] Tower aim strategy to be able to do more
+- [x] Tower aim strategy to be able to do more
 - [ ] Waves of enemy
 - [ ] Fishes follow path
 - [ ] More strategies for the projectiles
